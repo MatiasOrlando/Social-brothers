@@ -5,7 +5,7 @@ export const context = createContext();
 const { Provider } = context;
 
 const Context = ({ children }) => {
-  const token = "pj11daaQRz7zUIH56B9Z";
+  const token = import.meta.env.VITE_TOKEN;
   const [allPosts, setAllPosts] = useState([]);
   const [allCategories, setAllCategories] = useState([]);
   const [page, setPage] = useState(1);
