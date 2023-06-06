@@ -1,0 +1,31 @@
+.postActivityContainer {
+  min-height: 675px;
+  width: 642px;
+  background-color: #FFFFFF;
+  position: relative;
+  left: 24px;
+  right: 161px;
+  margin-bottom: 96px;
+  overflow: hidden;
+
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 24px;
+  padding: 23px;
+}
+
+.containerBtnLoadPosts {
+  display: flex;
+  justify-content: center;
+  margin-top: 114px;
+  margin-bottom: 18px
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}

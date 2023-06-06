@@ -1,0 +1,10 @@
+.postsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  grid-row-gap: 24px;
+  height: 430px;
+  width: 1116px;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}

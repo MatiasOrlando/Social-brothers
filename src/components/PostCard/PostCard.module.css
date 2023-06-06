@@ -1,0 +1,90 @@
+.postCardContainer {
+  height: 217px;
+  width: 285px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+}
+
+.postCardContainerBlog {
+  height: 217px;
+  width: 261px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+}
+
+
+.imageContainer {
+  position: relative;
+}
+
+.imagePost {
+ height: 100px;
+  width: 285px;
+}
+
+.imagePostBlog {
+ height: 100px;
+  width: 261px;
+}
+
+
+.dateSpan {
+  position: absolute;
+  bottom: 8px; 
+  left: 10px; 
+  padding: 5px; 
+  z-index: 1;
+  height: 10px;
+  width: 43px;
+  color: #FFFFFF;
+  font-family: Inter;
+  font-size: 8px;
+  font-style: italic;
+  letter-spacing: 0;
+  line-height: 10px;
+}
+
+
+.categorySpan {
+  position: absolute;
+  bottom: 8px; 
+  right: 10px; 
+  padding: 5px; 
+  z-index: 1;
+  height: 10px;
+  width: 19px;
+  color: #FFFFFF;
+  font-family: Inter;
+  font-size: 8px;
+  font-style: italic;
+  letter-spacing: 0;
+  line-height: 10px;
+}
+
+.cardTitle {
+  height: 29px;
+  width: 253px;
+  color: #262626;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 29px;
+  margin: 16px 16px 0px 16px;
+}
+
+.cardContent {
+  height: 60px;
+  width: 253px;
+  color: #868686;
+  font-family: Inter;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 19px;
+  margin: 6px 16px 0px 16px;
+}
+
+.cardInfo {
+ height: 85px;
+  width: 253px;
+}

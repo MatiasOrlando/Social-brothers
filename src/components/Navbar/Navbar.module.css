@@ -1,0 +1,58 @@
+.mask {
+  height: 250px;
+  width: 100%;
+  background-color: rgba(232, 177, 177, 0.4);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.logo {
+  height: 57px;
+  width: 240px;
+  position: absolute;
+  top: 32px;
+  left: 162px;
+  bottom: 119px;
+  right: 1038px;
+}
+
+.stackedGroup {
+  position: absolute; 
+  height: 30px;
+  width: 123px;
+  top: 32px;
+  left: 1155px;
+  bottom: 146px;
+  right: 162px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stackedGroup a {
+  height: 21px;
+  color: #FFFFFF;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 21px;
+  text-decoration: none;
+}
+
+.activeSection {
+  position: relative;
+}
+
+.activeSection::after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #E95E30
+}
+

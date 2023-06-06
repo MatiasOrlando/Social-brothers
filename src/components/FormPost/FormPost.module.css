@@ -1,0 +1,127 @@
+.formPost {
+  height: 675px;
+  width: 451px;
+  background-color: #FFFFFF;
+  margin-bottom: 96px;
+  margin-left: 162px;
+}
+
+.titleForm {
+  height: 29px;
+  width: 403px;
+  color: #2B2B2B;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 29px;
+  padding: 24px;
+}
+
+.titleContainer  {
+  display: flex;
+  flex-direction: column;
+  height: 62px;
+  width: 403px;
+  padding: 24px;
+}
+
+.titlePost {
+  height: 15px;
+  width: 403px;
+  color: #404040;
+  font-family: Inter;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.titleInput {
+  height: 39px;
+  width: 400px;
+  background-color: #FAFAFA;
+  border: none;
+  margin-top: 8px;
+  text-indent: 16px;
+}
+
+.titleInput::placeholder {
+  height: 15px;
+  width: 371px;
+  color: #C5C5C5;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.customSelect select {
+  font-style: italic;
+  color: #C5C5C5;
+  font-size: 0.8rem;
+}
+
+.customSelect select:focus {
+  outline: none;
+}
+
+.inputImg {
+  height: 39px;
+  width: 146px !important;
+  background-color: #FAFAFA;
+  border: none;
+  margin-top: 8px;
+  text-indent: 16px;
+  padding: 5px 8px;
+  font-size: 11px;
+}
+
+.textAreaContainer  {
+  display: flex;
+  flex-direction: column;
+  height: 135px;
+  width: 403px;
+  padding: 24px;
+
+}
+
+.textAreaInput { 
+  min-height: 140px;
+  height: auto;
+  width: 403px;
+  background-color: #FAFAFA;
+   box-sizing: border-box;
+  padding: 10px 16px;
+  width: 100%;
+  resize: vertical;
+  border: none;
+  margin-top: 8px;
+}
+
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px
+}
+
+.buttonNewPost {
+  height: 39px;
+  width: 202px;
+  border-radius: 20px;
+  background-color: #F27623;
+  border: none;
+}
+
+.buttonTextPost {
+  height: 15px;
+  width: 106px;
+  color: #FFFFFF;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 15px;
+}
