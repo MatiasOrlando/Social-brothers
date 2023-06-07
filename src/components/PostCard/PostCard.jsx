@@ -6,23 +6,26 @@ const PostCard = ({ postData }) => {
   const { pathname } = useLocation();
   const { title, content, img_url, category } = postData;
   const baseUrl = "https://frontend-case-api.sbdev.nl";
+
   const formatDate = (dateString) => {
     const dateObj = new Date(dateString);
     const day = dateObj.getDate();
     const month = dateObj.getMonth() + 1;
     const year = dateObj.getFullYear();
-    return `${month}-${day}-${year}`;
+    return `${month < 10 ? "0" + month : month}-${
+      day < 10 ? "0" + day : day
+    }-${year}`;
   };
 
   return (
-    <div
+    <article
       className={
         pathname === "/blog"
           ? styles.postCardContainerBlog
           : styles.postCardContainer
       }
     >
-      <div className={styles.imageContainer}>
+      <figure className={styles.imageContainer}>
         <img
           className={
             pathname === "/blog" ? styles.imagePostBlog : styles.imagePost
@@ -30,19 +33,22 @@ const PostCard = ({ postData }) => {
           src={`${baseUrl}/storage/${img_url}`}
           alt={title}
         />
-        <div>
+        <figcaption>
           <span className={styles.dateSpan}>
             {formatDate(postData.created_at)}
           </span>
-
           <span className={styles.categorySpan}>{category.name}</span>
+        </figcaption>
+      </figure>
+      <div
+        style={{ display: "flex", justifyContent: "center", marginTop: "14px" }}
+      >
+        <div className={styles.cardInfo}>
+          <h2 className={styles.cardTitle}>{title}</h2>
+          <div className={styles.cardContent}>{content}</div>
         </div>
       </div>
-      <div className={styles.cardInfo}>
-        <div className={styles.cardTitle}>{title}</div>
-        <div className={styles.cardContent}>{content}</div>
-      </div>
-    </div>
+    </article>
   );
 };
 

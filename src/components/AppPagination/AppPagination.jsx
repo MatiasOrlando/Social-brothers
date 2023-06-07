@@ -22,6 +22,7 @@ const AppPagination = ({ totalPages }) => {
         onChange={handleChange}
         page={page}
         count={totalPages}
+        siblingCount={page < 5 ? 1 : 2}
         sx={{
           "& .MuiPaginationItem-root": {
             color: "black",

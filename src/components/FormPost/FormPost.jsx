@@ -2,9 +2,12 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { context } from "../../../Context/Context";
 import styles from "./FormPost.module.css";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { AiOutlineCamera } from "react-icons/Ai";
 
 const FormPost = () => {
-  const { allCategories } = useContext(context);
+  const { allCategories, token } = useContext(context);
+  const [validCategory, setValidCategory] = useState("");
   const [formData, setFormData] = useState({
     title: "",
     category_id: "",
@@ -23,6 +26,7 @@ const FormPost = () => {
         categoryId = selectedCategory.id;
       }
     }
+    if (value !== "" && !isNaN(value)) setValidCategory(value);
     setFormData({ ...formData, [name]: categoryId || value });
   };
 
@@ -33,16 +37,19 @@ const FormPost = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    const token = "pj11daaQRz7zUIH56B9Z";
     try {
+      if (!formData.image) {
+        console.log("Please select an image");
+        return;
+      }
+
       const postData = new FormData();
       postData.append("title", formData.title);
       postData.append("category_id", formData.category_id);
       postData.append("content", formData.content);
       postData.append("image", formData.image);
 
-      const newPost = await axios.post(
+      await axios.post(
         "https://frontend-case-api.sbdev.nl/api/posts",
         postData,
         {
@@ -52,7 +59,15 @@ const FormPost = () => {
           },
         }
       );
-      console.log(newPost);
+
+      setFormData({
+        title: "",
+        category_id: "",
+        content: "",
+        image: null,
+      });
+
+      e.target.reset();
     } catch (error) {
       console.error(error);
     }
@@ -60,64 +75,94 @@ const FormPost = () => {
 
   return (
     <section className={styles.formPost}>
-      <h2 className={styles.titleForm}>Plaats een blog bericht</h2>
-      <form onSubmit={handleSubmit}>
-        <div className={styles.titleContainer}>
-          <label className={styles.titlePost}>Berichtnaam</label>
-          <input
-            type="text"
-            placeholder="Geen title"
-            className={styles.titleInput}
-            onChange={formValues}
-            name="title"
-            required
-          />
-        </div>
-        <div className={styles.titleContainer}>
-          <label className={styles.titlePost}>Categorie</label>
-          <div className={styles.customSelect}>
-            <select
+      <div style={{ width: "403px" }}>
+        <h2 className={styles.titleForm}>Plaats een blog bericht</h2>
+        <form onSubmit={handleSubmit} id="postForm">
+          <div className={styles.titleContainer}>
+            <label className={styles.titlePost}>Berichtnaam</label>
+            <input
+              type="text"
+              placeholder="Geen title"
               className={styles.titleInput}
-              defaultValue="Geen categorie"
               onChange={formValues}
-              name="category_id"
+              name="title"
               required
-            >
-              <option style={{ color: "#C5C5C5" }}>Geen categorie</option>
-              {allCategories?.map(({ name, id }) => {
-                return <option key={id}>{name}</option>;
-              })}
-            </select>
+            />
           </div>
-        </div>
-        <div className={styles.titleContainer}>
-          <label className={styles.titlePost}>Header afbeelding</label>
-          <input
-            type="file"
-            accept="image/*"
-            className={styles.inputImg}
-            onChange={handleImageChange}
-            name="image"
-          />
-        </div>
-
-        <div className={styles.textAreaContainer}>
-          <label className={styles.titlePost}>Bericht</label>
-          <textarea
-            className={styles.textAreaInput}
-            required
-            onChange={formValues}
-            name="content"
-          />
-        </div>
-        <div className={styles.buttonContainer}>
-          <div>
+          <div className={styles.titleContainer}>
+            <label className={styles.titlePost}>Categorie</label>
+            <div className={styles.customSelect}>
+              <div className={styles.selectWrapper}>
+                <select
+                  className={
+                    validCategory === ""
+                      ? styles.categoryInput
+                      : styles.categoryInputValid
+                  }
+                  defaultValue=""
+                  onChange={formValues}
+                  name="category_id"
+                  required
+                >
+                  <option value="" disabled>
+                    Geen categorie
+                  </option>
+                  {allCategories?.map(({ name, id }) => {
+                    return (
+                      <option key={id} value={id}>
+                        {name}
+                      </option>
+                    );
+                  })}
+                </select>
+                <div className={styles.dropdownIcon}>
+                  <RiArrowDropDownLine />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.titleContainer}>
+            <label className={styles.titlePost}>Header afbeelding</label>
+            <div className={styles.inputImg}>
+              <AiOutlineCamera className={styles.cameraIcon} />
+              <label
+                htmlFor="imageInput"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+              >
+                <div className={styles.fileUploadBtn}>
+                  <span className={styles.textFileUpload}>Kies bestand</span>
+                </div>
+              </label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                id="imageInput"
+                name="image"
+                style={{ display: "none" }}
+              />
+            </div>
+          </div>
+          <div className={styles.textAreaContainer}>
+            <label className={styles.titlePost}>Bericht</label>
+            <textarea
+              className={styles.textAreaInput}
+              onChange={formValues}
+              name="content"
+              required
+            />
+          </div>
+          <div className={styles.buttonContainer}>
             <button type="submit" className="buttonNewPost">
               <span className="buttonTextPost">Bericht aanmaken</span>
             </button>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </section>
   );
 };

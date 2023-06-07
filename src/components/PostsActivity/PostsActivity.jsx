@@ -1,11 +1,14 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import styles from "./PostsActivity.module.css";
 import { context } from "../../../Context/Context";
 import PostCard from "../PostCard/PostCard";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const PostsActivity = () => {
-  const { allPosts } = useContext(context);
+  const { allPosts, loading } = useContext(context);
   const [loadedPosts, setLoadedPosts] = useState([]);
+  const [buttonShow, setButtonShow] = useState(false);
+  const postActivityContainerRef = useRef();
 
   const sortedPosts = allPosts
     .slice()
@@ -20,32 +23,52 @@ const PostsActivity = () => {
     setLoadedPosts((prevPosts) => [...prevPosts, ...newPosts]);
   };
 
-  const showLessPosts = () => {
-    setLoadedPosts(initialPosts);
-  };
-
   useEffect(() => {
     setLoadedPosts(initialPosts);
+    setTimeout(() => {
+      setButtonShow(true);
+    }, 600);
   }, [allPosts]);
+
+  useEffect(() => {
+    if (
+      postActivityContainerRef.current &&
+      postActivityContainerRef.current.lastElementChild
+    ) {
+      postActivityContainerRef.current.lastElementChild.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  }, [loadedPosts]);
 
   return (
     <div className={styles.postActivityContainer}>
-      <div className={styles.cardContainer}>
-        {loadedPosts.map((post, i) => (
-          <PostCard key={i} postData={post} />
-        ))}
-      </div>
-      <div className={styles.containerBtnLoadPosts}>
-        {loadedPosts.length < allPosts.length ? (
-          <button onClick={loadMorePosts} className="buttonNewPost">
-            <span className="buttonTextPost">Load More</span>
-          </button>
-        ) : (
-          <button onClick={showLessPosts} className="buttonNewPost">
-            <span className="buttonTextPost">Show less</span>
-          </button>
-        )}
-      </div>
+      {loading ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "200px",
+          }}
+        >
+          <CircularProgress />
+        </div>
+      ) : (
+        <>
+          <div className={styles.cardContainer} ref={postActivityContainerRef}>
+            {loadedPosts.map((post, i) => (
+              <PostCard key={i} postData={post} />
+            ))}
+          </div>
+          <div className={styles.containerBtnLoadPosts}>
+            {buttonShow && loadedPosts.length < allPosts.length && (
+              <button onClick={loadMorePosts} className="buttonNewPost">
+                <span className="buttonTextPost">Laad meer</span>
+              </button>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 };

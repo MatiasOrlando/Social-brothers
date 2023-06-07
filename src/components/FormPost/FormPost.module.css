@@ -1,9 +1,9 @@
 .formPost {
   height: 675px;
   width: 451px;
-  background-color: #FFFFFF;
-  margin-bottom: 96px;
-  margin-left: 162px;
+  background-color: #FFFFFF; 
+  display: flex;
+  justify-content: center;
 }
 
 .titleForm {
@@ -12,10 +12,10 @@
   color: #2B2B2B;
   font-family: Inter;
   font-size: 24px;
-  font-weight: 900;
+  font-weight: bold;
   letter-spacing: 0;
   line-height: 29px;
-  padding: 24px;
+  padding: 24px 0;
 }
 
 .titleContainer  {
@@ -23,14 +23,14 @@
   flex-direction: column;
   height: 62px;
   width: 403px;
-  padding: 24px;
+  padding: 15px 0;
 }
 
 .titlePost {
   height: 15px;
   width: 403px;
   color: #404040;
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 15px;
@@ -45,6 +45,15 @@
   text-indent: 16px;
 }
 
+.categoryInput {
+  height: 39px;
+  width: 400px;
+  background-color: #FAFAFA;
+  border: none;
+  margin-top: 8px;
+  text-indent: 11px
+}
+
 .titleInput::placeholder {
   height: 15px;
   width: 371px;
@@ -56,55 +65,84 @@
   line-height: 15px;
 }
 
-.customSelect select {
-  font-style: italic;
-  color: #C5C5C5;
-  font-size: 0.8rem;
+
+.customSelect {
+  position: relative;
 }
 
-.customSelect select:focus {
-  outline: none;
+.selectWrapper {
+  position: relative;
+  display: inline-block;
 }
 
-.inputImg {
+.categoryInput {
   height: 39px;
-  width: 146px !important;
+  width: 400px;
   background-color: #FAFAFA;
   border: none;
   margin-top: 8px;
+  font-style: italic;
+  color: #c5c5c5;
+  font-size: 0.8rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 30px; 
   text-indent: 16px;
-  padding: 5px 8px;
-  font-size: 11px;
+  margin-top: 8px;
 }
+
+.categoryInputValid {
+  font-style: italic;
+  color: black;
+  font-size: 0.8rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 30px; 
+  text-indent: 16px;
+  height: 39px;
+  width: 400px;
+  background-color: #FAFAFA;
+  border: none;
+  margin-top: 8px;
+}
+
+.dropdownIcon {
+  position: absolute;
+  top: 67%;
+  right: 10px; 
+  transform: translateY(-50%);
+  color: black;
+  font-size: 24px;
+  pointer-events: none; 
+}
+
 
 .textAreaContainer  {
   display: flex;
   flex-direction: column;
-  height: 135px;
+  height: 237px;
   width: 403px;
-  padding: 24px;
-
+  padding-top: 15px;
 }
 
 .textAreaInput { 
-  min-height: 140px;
+  min-height: 200px;
   height: auto;
   width: 403px;
   background-color: #FAFAFA;
-   box-sizing: border-box;
-  padding: 10px 16px;
-  width: 100%;
+  box-sizing: border-box;
   resize: vertical;
   border: none;
   margin-top: 8px;
 }
 
-
 .buttonContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 24px
+  margin-top: 8px;
 }
 
 .buttonNewPost {
@@ -124,4 +162,45 @@
   font-weight: bold;
   letter-spacing: 0;
   line-height: 15px;
+}
+
+.inputImg {
+  max-height: 39px;
+  width: 146px !important;
+  background-color: #FAFAFA;
+  border: none;
+  margin-top: 8px;
+  font-size: 11px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.fileUploadBtn {
+  height: 20px;
+  width: 86px;
+  border-radius: 10px;
+  background-color: #7D7D7D;
+  border: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+ 
+}
+
+.textFileUpload {
+  height: 12px;
+  width: 86px;
+  color: #FFFFFF ;
+  font-family: Inter;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 12px;
+}
+
+.cameraIcon {
+  height: 20px;
+  width: 15px;
+  color: gray;
 }

@@ -1,0 +1,19 @@
+.footerContainer {
+  background-color: #262626;
+  height: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.spanFooter {
+  color: #FFFFFF;
+  font-family: Inter;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 15px;
+  text-align: center;
+  margin: auto; 
+}

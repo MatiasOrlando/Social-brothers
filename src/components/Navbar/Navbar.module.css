@@ -33,10 +33,11 @@
 
 .stackedGroup a {
   height: 21px;
+  width: 52px;
   color: #FFFFFF;
   font-family: Inter;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: semi-bold;
   letter-spacing: 0;
   line-height: 21px;
   text-decoration: none;
@@ -45,6 +46,7 @@
 .activeSection {
   position: relative;
 }
+
 
 .activeSection::after {
   content: "";
@@ -56,3 +58,21 @@
   background-color: #E95E30
 }
 
+.blogNavbar {
+  position: absolute;
+  height: 62px;
+  width: 1116px;
+  color: white;
+  font-family: Inter;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 62px;
+  text-align: center;
+  top: 133px;
+  left: 161.5px;
+  bottom: 33px;
+  right: 162.5px;
+ 
+}
+
+.blogNavbar h1 {font-size: 48px;}

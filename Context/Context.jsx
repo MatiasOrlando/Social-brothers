@@ -9,11 +9,12 @@ const Context = ({ children }) => {
   const [allPosts, setAllPosts] = useState([]);
   const [allCategories, setAllCategories] = useState([]);
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   const fetchAllPosts = async () => {
     try {
       const fetchedPosts = await axios.get(
-        "https://frontend-case-api.sbdev.nl/api/posts?page=1&perPage=10&sortBy=title&sortDirection=asc&searchPhrase=test ber&categoryId=1",
+        "https://frontend-case-api.sbdev.nl/api/posts?page=1&perPage=100000",
         {
           headers: {
             token,
@@ -24,6 +25,7 @@ const Context = ({ children }) => {
     } catch (error) {
       console.error(error);
     }
+    setLoading(false);
   };
 
   const fetchAllCategories = async () => {
@@ -47,7 +49,14 @@ const Context = ({ children }) => {
     fetchAllCategories();
   }, []);
 
-  const valueContext = { allPosts, allCategories, page, setPage };
+  const valueContext = {
+    allPosts,
+    allCategories,
+    page,
+    setPage,
+    token,
+    loading,
+  };
 
   return <Provider value={valueContext}>{children}</Provider>;
 };
