@@ -93,7 +93,6 @@
 }
 
 .categoryInputValid {
-  font-style: italic;
   color: black;
   font-size: 0.8rem;
   -webkit-appearance: none;
@@ -136,7 +135,10 @@
   resize: vertical;
   border: none;
   margin-top: 8px;
+  padding: 8px;
 }
+
+
 
 .buttonContainer {
   display: flex;
@@ -174,7 +176,6 @@
   padding: 10px 0;
   display: flex;
   justify-content: space-evenly;
-  
 }
 
 .fileUploadBtn {
@@ -186,7 +187,6 @@
   display: flex;
   align-items: center;
   text-align: center;
- 
 }
 
 .textFileUpload {
@@ -204,3 +204,4 @@
   width: 15px;
   color: gray;
 }
+

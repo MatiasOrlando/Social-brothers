@@ -28,3 +28,29 @@ body {
 }
 
 
+
+
+input[type="file"]::before {
+  content: attr(data-text);
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 4px 12px;
+  background-color: #7D7D7D;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+input[type="file"][data-text="Kies bestand"]::before {
+  content: "Kies bestand";
+}
+
+input[type="file"][data-text="Verwijderen"]::before {
+  content: "Verwijderen";
+}
+
+

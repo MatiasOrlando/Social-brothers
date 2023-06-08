@@ -1,5 +1,5 @@
 .mask {
-  height: 250px;
+  height: 208px;
   width: 100%;
   background-color: rgba(232, 177, 177, 0.4);
 }
@@ -24,9 +24,8 @@
   height: 30px;
   width: 123px;
   top: 32px;
-  left: 1155px;
+  left: 1217px;
   bottom: 146px;
-  right: 162px;
   display: flex;
   justify-content: space-between;
 }
@@ -35,12 +34,13 @@
   height: 21px;
   width: 52px;
   color: #FFFFFF;
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 18px;
-  font-weight: semi-bold;
+  font-weight: 500 ;
   letter-spacing: 0;
   line-height: 21px;
   text-decoration: none;
+
 }
 
 .activeSection {

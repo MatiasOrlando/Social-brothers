@@ -8,7 +8,6 @@ const Context = ({ children }) => {
   const token = import.meta.env.VITE_TOKEN;
   const [allPosts, setAllPosts] = useState([]);
   const [allCategories, setAllCategories] = useState([]);
-  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
   const fetchAllPosts = async () => {
@@ -52,10 +51,9 @@ const Context = ({ children }) => {
   const valueContext = {
     allPosts,
     allCategories,
-    page,
-    setPage,
     token,
     loading,
+    fetchAllPosts,
   };
 
   return <Provider value={valueContext}>{children}</Provider>;

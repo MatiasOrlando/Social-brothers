@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect, useRef } from "react";
 import styles from "./PostsActivity.module.css";
-import { context } from "../../../Context/Context";
+import { context } from "../../Context/Context";
 import PostCard from "../PostCard/PostCard";
 import CircularProgress from "@mui/material/CircularProgress";
 
@@ -23,6 +23,17 @@ const PostsActivity = () => {
     setLoadedPosts((prevPosts) => [...prevPosts, ...newPosts]);
   };
 
+  const scrollIntoView = () => {
+    if (
+      postActivityContainerRef.current &&
+      postActivityContainerRef.current.lastElementChild
+    ) {
+      postActivityContainerRef.current.lastElementChild.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   useEffect(() => {
     setLoadedPosts(initialPosts);
     setTimeout(() => {
@@ -31,13 +42,8 @@ const PostsActivity = () => {
   }, [allPosts]);
 
   useEffect(() => {
-    if (
-      postActivityContainerRef.current &&
-      postActivityContainerRef.current.lastElementChild
-    ) {
-      postActivityContainerRef.current.lastElementChild.scrollIntoView({
-        behavior: "smooth",
-      });
+    if (loadedPosts.length > initialPosts.length) {
+      scrollIntoView();
     }
   }, [loadedPosts]);
 

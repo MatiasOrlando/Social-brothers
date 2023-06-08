@@ -9,7 +9,6 @@
   overflow-y: auto; 
 }
 
-
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
@@ -21,7 +20,8 @@
 .containerBtnLoadPosts {
   display: flex;
   justify-content: center;
-  margin-top: 109.2px;
+  margin-top: 109px;
+  margin-bottom: 24px
 }
 
 

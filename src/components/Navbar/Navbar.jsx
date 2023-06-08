@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import header from "../../assets/header.png";
+import banner from "../../assets/banner.png";
 import logo from "../../assets/logo.svg";
 import styles from "./Navbar.module.css";
 import { NavLink, useLocation } from "react-router-dom";
@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles.container}>
-      <img src={header} className={styles.mask} />
+      <img src={banner} className={styles.mask} />
       <img src={logo} alt={logo} className={styles.logo} />
       {pathname === "/blog" && (
         <div className={styles.blogNavbar}>

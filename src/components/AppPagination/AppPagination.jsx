@@ -1,11 +1,8 @@
 import React, { useContext } from "react";
 import Pagination from "@mui/material/Pagination";
 import { Box } from "@mui/material";
-import { context } from "../../../Context/Context";
 
-const AppPagination = ({ totalPages }) => {
-  const { setPage, page } = useContext(context);
-
+const AppPagination = ({ totalPages, page, setPage }) => {
   const handleChange = (event, page) => {
     setPage(+page);
   };

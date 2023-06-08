@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
-import { context } from "../../../Context/Context";
 import styles from "./Blog.module.css";
 import PostCard from "../../components/PostCard/PostCard";
 import AppPagination from "../../components/AppPagination/AppPagination";
 import CircularProgress from "@mui/material/CircularProgress";
+import { context } from "../../Context/Context";
 
 const Blog = () => {
-  const { allPosts, page, loading } = useContext(context);
+  const { allPosts, loading } = useContext(context);
+  const [page, setPage] = useState(1);
+
   const postsPerPage = 8;
   const totalPages = Math.ceil(allPosts.length / postsPerPage);
   const startIndex = (page - 1) * postsPerPage;
@@ -39,7 +41,11 @@ const Blog = () => {
                 <PostCard postData={post} key={post.id} />
               ))}
             </div>
-            <AppPagination totalPages={totalPages} />
+            <AppPagination
+              totalPages={totalPages}
+              page={page}
+              setPage={setPage}
+            />
           </div>
         )}
       </div>
