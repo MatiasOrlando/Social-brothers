@@ -8,3 +8,25 @@
   width: 1116px;
   margin-bottom: 24px;
 }
+
+@media (max-width: 1200px) {
+  .postsContainer {
+    grid-template-columns: repeat(3, 1fr);
+    width: 900px;
+  }
+}
+
+@media (max-width: 900px) {
+  .postsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    width: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .postsContainer {
+    grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: center;
+  }
+}

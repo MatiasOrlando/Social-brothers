@@ -25,7 +25,7 @@ const Navbar = () => {
           <h1>Blog</h1>
         </section>
       )}
-      <div className={styles.stackedGroup}>
+      <div className={styles.stackedGroup} role="navigation">
         <NavLink
           to="/"
           className={activeSection === "Home" ? styles.activeSection : ""}
