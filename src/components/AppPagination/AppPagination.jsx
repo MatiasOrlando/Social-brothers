@@ -1,10 +1,10 @@
 import React from "react";
-import Pagination from "@mui/material/Pagination";
 import { Box } from "@mui/material";
+import Pagination from "@mui/material/Pagination";
 
 const AppPagination = ({ totalPages, page, setPage }) => {
-  const handleChange = (event, page) => {
-    setPage(+page);
+  const handleChange = (_, newPage) => {
+    setPage(newPage);
   };
 
   return (

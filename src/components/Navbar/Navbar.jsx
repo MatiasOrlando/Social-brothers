@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import banner from "../../assets/banner.png";
 import logo from "../../assets/logo.svg";
 import styles from "./Navbar.module.css";
-import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const { pathname } = useLocation();

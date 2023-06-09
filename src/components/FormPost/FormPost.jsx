@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import styles from "./FormPost.module.css";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { AiOutlineCamera } from "react-icons/Ai";
 import CustomButton from "../CustomButton/CustomButton";
 import { context } from "../../Context/Context";
 import { baseUrl } from "../../utils/url";
 import { token } from "../../services/api";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { AiOutlineCamera } from "react-icons/Ai";
 import toast, { Toaster } from "react-hot-toast";
+import styles from "./FormPost.module.css";
 
 const FormPost = () => {
   const { allCategories, fetchAllPosts } = useContext(context);
@@ -47,7 +47,6 @@ const FormPost = () => {
     if (!formData.title.trim() || !formData.content.trim()) {
       return;
     }
-
     e.target.reset();
     setValidCategory("");
     setFileSelected(false);
@@ -66,7 +65,6 @@ const FormPost = () => {
         content: "",
         image: null,
       });
-
       toast.success("Bericht succesvol aangemaakt", {
         duration: "100",
         style: {
@@ -175,7 +173,7 @@ const FormPost = () => {
           </form>
         </div>
       </section>
-      {/* <Toaster /> */}
+      <Toaster />
     </>
   );
 };

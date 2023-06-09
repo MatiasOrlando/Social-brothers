@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "./PostCard.module.css";
 import { useLocation } from "react-router-dom";
 import { baseUrl } from "../../utils/url";
+import styles from "./PostCard.module.css";
 
 const PostCard = ({ postData }) => {
   const [showPartialContent, setShowPartialContent] = useState(false);
@@ -78,8 +78,8 @@ const PostCard = ({ postData }) => {
             ) : (
               <>
                 {pathname === "/blog"
-                  ? content.substr(0, 122)
-                  : content.substr(0, 135)}
+                  ? content.substr(0, 123)
+                  : content.substr(0, 130)}
                 {content.length > 200 && (
                   <span
                     onClick={handleWatchMore}

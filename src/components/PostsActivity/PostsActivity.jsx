@@ -1,9 +1,9 @@
-import { useContext, useState, useEffect, useRef } from "react";
-import styles from "./PostsActivity.module.css";
+import React, { useContext, useState, useEffect, useRef } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
 import { context } from "../../Context/Context";
 import PostCard from "../PostCard/PostCard";
-import CircularProgress from "@mui/material/CircularProgress";
 import CustomButton from "../CustomButton/CustomButton";
+import styles from "./PostsActivity.module.css";
 
 const PostsActivity = () => {
   const { allPosts, loading } = useContext(context);
@@ -55,8 +55,8 @@ const PostsActivity = () => {
       ) : (
         <>
           <div className={styles.cardContainer} ref={postActivityContainerRef}>
-            {loadedPosts.map((post, i) => (
-              <PostCard key={i} postData={post} />
+            {loadedPosts.map((post) => (
+              <PostCard key={post.id} postData={post} />
             ))}
           </div>
           <div className={styles.containerBtnLoadPosts}>
