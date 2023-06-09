@@ -70,7 +70,10 @@ const PostCard = ({ postData }) => {
                 {content}
                 <span
                   onClick={handleWatchMore}
-                  style={{ cursor: "pointer", fontWeight: "600" }}
+                  style={{
+                    cursor: "pointer",
+                    fontWeight: "600",
+                  }}
                 >
                   ...Minder weergeven
                 </span>
@@ -78,7 +81,7 @@ const PostCard = ({ postData }) => {
             ) : (
               <>
                 {pathname === "/blog"
-                  ? content.substr(0, 123)
+                  ? content.substr(0, 120)
                   : content.substr(0, 130)}
                 {content.length > 200 && (
                   <span

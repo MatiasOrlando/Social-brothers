@@ -63,12 +63,14 @@
 
 .cardInfo {
   width: 255px;
-  height: 113px;
+  min-height: 113px;
+  height: auto;
 }
 
 .cardInfoBlog {
  width: 229px;
- height: 113px;
+ min-height: 113px;
+ height: auto;
 }
 
 
@@ -106,7 +108,8 @@
 
 
 .cardContent {
-  height: 76px;
+  min-height: 76px;
+  height: auto;
   width: 253px;
   color: #868686;
   font-family: Inter;
@@ -115,10 +118,12 @@
   line-height: 19px;
   margin-top: 8px;
   word-wrap: break-word;
+  margin-bottom: 10px;
 }
 
 .cardContentBlog {
-  height: 76px;
+  min-height: 76px;
+  height: auto;
   width: 229px;
   color: #868686;
   font-family: Inter;
@@ -127,12 +132,13 @@
   margin-top: 8px;
   line-height: 19px;
   word-wrap: break-word;
+  margin-bottom: 10px;
 }
 
 .postCardContainer.expanded {
-  height: 275px ;
+  height: auto 
 }
 
 .postCardContainerBlog.expanded {
-  height: 290px;
+  height: auto 
 }
