@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./PostCard.module.css";
 import { useLocation } from "react-router-dom";
+import { baseUrl } from "../../utils/url";
 
 const PostCard = ({ postData }) => {
+  const [showPartialContent, setShowPartialContent] = useState(false);
   const { pathname } = useLocation();
   const { title, content, img_url, category } = postData;
-  const baseUrl = "https://frontend-case-api.sbdev.nl";
 
   const formatDate = (dateString) => {
     const dateObj = new Date(dateString);
@@ -17,13 +18,17 @@ const PostCard = ({ postData }) => {
     }-${year}`;
   };
 
+  const handleWatchMore = () => {
+    setShowPartialContent(!showPartialContent);
+  };
+
   return (
     <article
-      className={
+      className={`${
         pathname === "/blog"
           ? styles.postCardContainerBlog
           : styles.postCardContainer
-      }
+      } ${showPartialContent && styles.expanded}`}
     >
       <figure className={styles.imageContainer}>
         <img
@@ -43,9 +48,49 @@ const PostCard = ({ postData }) => {
       <div
         style={{ display: "flex", justifyContent: "center", marginTop: "14px" }}
       >
-        <div className={styles.cardInfo}>
-          <h2 className={styles.cardTitle}>{title}</h2>
-          <div className={styles.cardContent}>{content}</div>
+        <div
+          className={
+            pathname === "/blog" ? styles.cardInfoBlog : styles.cardInfo
+          }
+        >
+          <h2
+            className={
+              pathname === "/blog" ? styles.cardTitleBlog : styles.cardTitle
+            }
+          >
+            {title}
+          </h2>
+          <div
+            className={
+              pathname === "/blog" ? styles.cardContentBlog : styles.cardContent
+            }
+          >
+            {showPartialContent ? (
+              <>
+                {content}
+                <span
+                  onClick={handleWatchMore}
+                  style={{ cursor: "pointer", fontWeight: "600" }}
+                >
+                  ...Minder weergeven
+                </span>
+              </>
+            ) : (
+              <>
+                {pathname === "/blog"
+                  ? content.substr(0, 118)
+                  : content.substr(0, 135)}
+                {content.length > 200 && (
+                  <span
+                    onClick={handleWatchMore}
+                    style={{ cursor: "pointer", fontWeight: "600" }}
+                  >
+                    ...Lees meer
+                  </span>
+                )}
+              </>
+            )}
+          </div>
         </div>
       </div>
     </article>

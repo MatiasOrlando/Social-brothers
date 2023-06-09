@@ -18,12 +18,12 @@ const Navbar = () => {
 
   return (
     <nav className={styles.container}>
-      <img src={banner} className={styles.mask} />
-      <img src={logo} alt={logo} className={styles.logo} />
+      <img src={banner} className={styles.mask} alt="Banner" />
+      <img src={logo} className={styles.logo} alt="Logo" />
       {pathname === "/blog" && (
-        <div className={styles.blogNavbar}>
+        <section className={styles.blogNavbar}>
           <h1>Blog</h1>
-        </div>
+        </section>
       )}
       <div className={styles.stackedGroup}>
         <NavLink

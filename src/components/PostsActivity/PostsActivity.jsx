@@ -3,6 +3,7 @@ import styles from "./PostsActivity.module.css";
 import { context } from "../../Context/Context";
 import PostCard from "../PostCard/PostCard";
 import CircularProgress from "@mui/material/CircularProgress";
+import CustomButton from "../CustomButton/CustomButton";
 
 const PostsActivity = () => {
   const { allPosts, loading } = useContext(context);
@@ -48,15 +49,9 @@ const PostsActivity = () => {
   }, [loadedPosts]);
 
   return (
-    <div className={styles.postActivityContainer}>
+    <section className={styles.postActivityContainer}>
       {loading ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "200px",
-          }}
-        >
+        <div className={styles.loadingContainer}>
           <CircularProgress />
         </div>
       ) : (
@@ -68,14 +63,16 @@ const PostsActivity = () => {
           </div>
           <div className={styles.containerBtnLoadPosts}>
             {buttonShow && loadedPosts.length < allPosts.length && (
-              <button onClick={loadMorePosts} className="buttonNewPost">
-                <span className="buttonTextPost">Laad meer</span>
-              </button>
+              <CustomButton
+                className={"buttonLoadPosts"}
+                text="Laad meer"
+                handleClick={loadMorePosts}
+              />
             )}
           </div>
         </>
       )}
-    </div>
+    </section>
   );
 };
 

@@ -3,11 +3,11 @@ import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <div className={styles.footerContainer}>
-      <span className={styles.spanFooter}>
-        © Copyright Social Brothers - 2023
-      </span>
-    </div>
+    <footer className={styles.footerContainer}>
+      <p className={styles.footerText}>
+        © {new Date().getFullYear()} Social Brothers
+      </p>
+    </footer>
   );
 };
 

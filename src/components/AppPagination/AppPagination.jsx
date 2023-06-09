@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Pagination from "@mui/material/Pagination";
 import { Box } from "@mui/material";
 
@@ -12,7 +12,6 @@ const AppPagination = ({ totalPages, page, setPage }) => {
       sx={{
         display: "flex",
         justifyContent: "center",
-        marginBottom: "20px",
       }}
     >
       <Pagination

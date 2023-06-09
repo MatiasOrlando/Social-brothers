@@ -5,14 +5,24 @@ import styles from "./Home.module.css";
 
 const Home = () => {
   return (
-    <div className={styles.gridHome}>
-      <div style={{ gridColumn: "span 5", height: "659px" }}>
+    <main className={styles.gridHome}>
+      <section
+        style={{
+          gridColumn: "span 5",
+          height: "675px",
+        }}
+      >
         <FormPost />
-      </div>
-      <div style={{ gridColumn: "span 7", height: "659px" }}>
+      </section>
+      <section
+        style={{
+          gridColumn: "span 7",
+          height: "675px",
+        }}
+      >
         <PostsActivity />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

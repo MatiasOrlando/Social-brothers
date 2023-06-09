@@ -1,13 +1,16 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import styles from "./FormPost.module.css";
+import CustomButton from "../CustomButton/CustomButton";
+import { context } from "../../Context/Context";
+import { baseUrl } from "../../utils/url";
+import { token } from "../../services/api";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { AiOutlineCamera } from "react-icons/Ai";
 import toast, { Toaster } from "react-hot-toast";
-import { context } from "../../Context/Context";
 
 const FormPost = () => {
-  const { allCategories, token, fetchAllPosts } = useContext(context);
+  const { allCategories, fetchAllPosts } = useContext(context);
   const [validCategory, setValidCategory] = useState("");
   const [fileSelected, setFileSelected] = useState(false);
 
@@ -41,26 +44,20 @@ const FormPost = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.title.trim() || !formData.content.trim()) {
+      return;
+    }
     e.target.reset();
     setValidCategory("");
+    setFileSelected(false);
 
     try {
-      const postData = new FormData();
-      postData.append("title", formData.title);
-      postData.append("category_id", formData.category_id);
-      postData.append("content", formData.content);
-      postData.append("image", formData.image);
-
-      await axios.post(
-        "https://frontend-case-api.sbdev.nl/api/posts",
-        postData,
-        {
-          headers: {
-            token,
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      await axios.post(`${baseUrl}/api/posts`, formData, {
+        headers: {
+          token,
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       setFormData({
         title: "",
@@ -90,9 +87,12 @@ const FormPost = () => {
           <h2 className={styles.titleForm}>Plaats een blog bericht</h2>
           <form onSubmit={handleSubmit} id="postForm">
             <div className={styles.titleContainer}>
-              <label className={styles.titlePost}>Berichtnaam</label>
+              <label htmlFor="title" className={styles.titlePost}>
+                Berichtnaam
+              </label>
               <input
                 type="text"
+                id="title"
                 placeholder="Geen title"
                 className={styles.titleInput}
                 onChange={formValues}
@@ -101,10 +101,13 @@ const FormPost = () => {
               />
             </div>
             <div className={styles.titleContainer}>
-              <label className={styles.titlePost}>Categorie</label>
+              <label htmlFor="category_id" className={styles.titlePost}>
+                Categorie
+              </label>
               <div className={styles.customSelect}>
                 <div className={styles.selectWrapper}>
                   <select
+                    id="category_id"
                     className={
                       validCategory === ""
                         ? styles.categoryInput
@@ -133,14 +136,16 @@ const FormPost = () => {
               </div>
             </div>
             <div className={styles.titleContainer}>
-              <label className={styles.titlePost}>Header afbeelding</label>
+              <label htmlFor="image" className={styles.titlePost}>
+                Header afbeelding
+              </label>
               <div className={styles.inputImg}>
                 <AiOutlineCamera className={styles.cameraIcon} />
                 <input
                   type="file"
                   accept="image/*"
                   onChange={handleImageChange}
-                  id="imageInput"
+                  id="image"
                   name="image"
                   data-text={fileSelected ? "Verwijderen" : "Kies bestand"}
                   className={styles.fileUploadBtn}
@@ -149,8 +154,11 @@ const FormPost = () => {
               </div>
             </div>
             <div className={styles.textAreaContainer}>
-              <label className={styles.titlePost}>Bericht</label>
+              <label htmlFor="content" className={styles.titlePost}>
+                Bericht
+              </label>
               <textarea
+                id="content"
                 className={styles.textAreaInput}
                 onChange={formValues}
                 name="content"
@@ -158,9 +166,10 @@ const FormPost = () => {
               />
             </div>
             <div className={styles.buttonContainer}>
-              <button type="submit" className="buttonNewPost">
-                <span className="buttonTextPost">Bericht aanmaken</span>
-              </button>
+              <CustomButton
+                className={"buttonNewPost"}
+                text="Bericht aanmaken"
+              />
             </div>
           </form>
         </div>

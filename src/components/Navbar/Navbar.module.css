@@ -1,7 +1,8 @@
 .mask {
   height: 208px;
   width: 100%;
-  background-color: rgba(232, 177, 177, 0.4);
+  background-color: rgba(0,0,0,0.4);
+  filter: brightness(0.9);
 }
 
 .container {
@@ -69,10 +70,11 @@
   line-height: 62px;
   text-align: center;
   top: 133px;
-  left: 161.5px;
+  left: 0;
   bottom: 33px;
-  right: 162.5px;
- 
+  right: 0;
+  margin: auto;
+
 }
 
 .blogNavbar h1 {font-size: 48px;}

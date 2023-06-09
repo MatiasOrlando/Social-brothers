@@ -16,6 +16,14 @@ body {
   border: none;
 }
 
+.buttonLoadPosts {
+  height: 39px;
+  width: 158px;
+  border-radius: 20px;
+  background-color: #F27623;
+  border: none;
+}
+
 .buttonTextPost {
   height: 15px;
   width: 106px;
@@ -26,7 +34,6 @@ body {
   letter-spacing: 0;
   line-height: 15px;
 }
-
 
 
 

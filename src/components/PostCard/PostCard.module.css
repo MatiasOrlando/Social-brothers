@@ -62,11 +62,18 @@
 }
 
 .cardInfo {
-  width: 253px;
-  height: 115px;
+  width: 255px;
+  height: 113px;
 }
 
+.cardInfoBlog {
+ width: 229px;
+ height: 113px;
+}
+
+
 .cardTitle {
+  height: 29px;
   width: 253px;
   color: #262626;
   font-family: Inter;
@@ -74,11 +81,31 @@
   font-weight: bold;
   letter-spacing: 0;
   line-height: 29px;
-  white-space: nowrap;
-
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
+
+
+.cardTitleBlog {
+  height: 29px;
+  width: 229px;
+  color: #262626;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 29px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+
 .cardContent {
-  width: 253px;
   height: 76px;
   width: 253px;
   color: #868686;
@@ -86,4 +113,26 @@
   font-size: 12px;
   letter-spacing: 0;
   line-height: 19px;
+  margin-top: 8px;
+  word-wrap: break-word;
+}
+
+.cardContentBlog {
+  height: 76px;
+  width: 229px;
+  color: #868686;
+  font-family: Inter;
+  font-size: 12px;
+  letter-spacing: 0;
+  margin-top: 8px;
+  line-height: 19px;
+  word-wrap: break-word;
+}
+
+.postCardContainer.expanded {
+  height: 275px ;
+}
+
+.postCardContainerBlog.expanded {
+  height: 290px;
 }
