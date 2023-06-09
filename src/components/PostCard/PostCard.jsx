@@ -78,7 +78,7 @@ const PostCard = ({ postData }) => {
             ) : (
               <>
                 {pathname === "/blog"
-                  ? content.substr(0, 118)
+                  ? content.substr(0, 122)
                   : content.substr(0, 135)}
                 {content.length > 200 && (
                   <span

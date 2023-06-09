@@ -1,10 +1,9 @@
 .gridHome {
   height: 675px;
-  width: 100%;
+  width: auto;
   display: grid;
   grid-template-columns: repeat(12, 71px);
-  gap: 20px;
-  justify-content: center;
+  gap: 24px;
   align-items: center;
   margin-top: 64px;
 }

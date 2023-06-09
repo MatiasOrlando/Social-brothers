@@ -2,11 +2,8 @@
   height: 675px; 
   width: 642px;
   background-color: #FFFFFF;
-  position: relative;
-  left: 24px;
-  right: 161px;
-  margin-bottom: 96px;
   overflow-y: auto; 
+  grid-column: span 7;
 }
 
 .cardContainer {
@@ -20,8 +17,8 @@
 .containerBtnLoadPosts {
   display: flex;
   justify-content: center;
-  margin-top: 109px;
-  margin-bottom: 24px
+  margin-top: 109.5px;
+  margin-bottom: 24px;  
 }
 
 

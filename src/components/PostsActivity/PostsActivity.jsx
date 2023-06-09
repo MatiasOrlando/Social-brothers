@@ -37,9 +37,7 @@ const PostsActivity = () => {
 
   useEffect(() => {
     setLoadedPosts(initialPosts);
-    setTimeout(() => {
-      setButtonShow(true);
-    }, 600);
+    setButtonShow(true);
   }, [allPosts]);
 
   useEffect(() => {

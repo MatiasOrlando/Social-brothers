@@ -47,6 +47,7 @@ const FormPost = () => {
     if (!formData.title.trim() || !formData.content.trim()) {
       return;
     }
+
     e.target.reset();
     setValidCategory("");
     setFileSelected(false);
@@ -174,7 +175,7 @@ const FormPost = () => {
           </form>
         </div>
       </section>
-      <Toaster />
+      {/* <Toaster /> */}
     </>
   );
 };

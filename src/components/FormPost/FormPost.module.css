@@ -4,6 +4,7 @@
   background-color: #FFFFFF; 
   display: flex;
   justify-content: center;
+  grid-column: span 5;
 }
 
 .titleForm {

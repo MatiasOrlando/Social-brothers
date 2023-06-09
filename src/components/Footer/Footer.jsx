@@ -4,9 +4,7 @@ import styles from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={styles.footerContainer}>
-      <p className={styles.footerText}>
-        © {new Date().getFullYear()} Social Brothers
-      </p>
+      <p className={styles.footerText}>© Copyright Social Brothers - 2023</p>
     </footer>
   );
 };
