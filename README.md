@@ -15,6 +15,7 @@ Navigation: The user is able to navigate to the different pages through a naviga
 ## Installation 🔧
 
 To run this project in a development environment, simply clone this repository.
+Please create a .env file with the following key "VITE_TOKEN" with the value of the token provided.
 <br>
 Git clone: https://github.com/MatiasOrlando/Social-brothers-assessment.git
 
@@ -27,6 +28,7 @@ Git clone: https://github.com/MatiasOrlando/Social-brothers-assessment.git
 | npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view it on your browser.
+
 <br>
 <br>
 
