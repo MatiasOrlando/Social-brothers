@@ -38,7 +38,7 @@ This project was developed using the following technologies and frameworks:
 <li>React JS (Vite)</li>
 <li>Material-UI</li>
 </ul>
-
+<br>
 ## Version 📝
 
 v1.0.0 - June 09, 2023
@@ -46,7 +46,7 @@ v1.0.0 - June 09, 2023
 <ul>
 <li>Initial version</li>
 </ul>
-
+<br>
 ## Author: 🚀
 
 <li>Matias Orlando</li>
