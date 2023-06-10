@@ -41,6 +41,7 @@ This project was developed using the following technologies and frameworks:
 <li>Material-UI</li>
 </ul>
 <br>
+
 ## Version 📝
 
 v1.0.0 - June 09, 2023
@@ -49,6 +50,7 @@ v1.0.0 - June 09, 2023
 <li>Initial version</li>
 </ul>
 <br>
+
 ## Author: 🚀
 
 <li>Matias Orlando</li>
