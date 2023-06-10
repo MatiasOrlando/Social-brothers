@@ -212,6 +212,15 @@
   color: gray;
 }
 
+.buttonNewPost {
+  height: 39px;
+  width: 202px;
+  border-radius: 20px;
+  background-color: #F27623;
+  border: none;
+}
+
+
 @media (max-width: 1400px) {
   .formPost {
     grid-column: span 12;

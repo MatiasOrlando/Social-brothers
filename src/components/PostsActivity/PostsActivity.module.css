@@ -24,13 +24,20 @@
   margin-top: 114px;
 }
 
+.buttonLoadPosts {
+  height: 39px;
+  width: 158px;
+  border-radius: 20px;
+  background-color: #F27623;
+  border: none;
+}
+
 
 .loadingContainer {
   display: flex;
   justify-content: center;
   margin-top: 200px;
 }
-
 
 @media (max-width: 1400px) {
   .postActivityContainer {

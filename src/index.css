@@ -3,39 +3,9 @@
   padding: 0;
 }
 
-
 body {
   background-color: #FAFAFA
 }
-
-.buttonNewPost {
-  height: 39px;
-  width: 202px;
-  border-radius: 20px;
-  background-color: #F27623;
-  border: none;
-}
-
-.buttonLoadPosts {
-  height: 39px;
-  width: 158px;
-  border-radius: 20px;
-  background-color: #F27623;
-  border: none;
-}
-
-.buttonTextPost {
-  height: 15px;
-  width: 106px;
-  color: #FFFFFF;
-  font-family: Inter;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0;
-  line-height: 15px;
-}
-
-
 
 input[type="file"]::before {
   content: attr(data-text);

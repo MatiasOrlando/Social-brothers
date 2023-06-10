@@ -171,7 +171,7 @@ const FormPost = () => {
             </div>
             <div className={styles.buttonContainer}>
               <CustomButton
-                className={"buttonNewPost"}
+                className={styles.buttonNewPost}
                 text="Bericht aanmaken"
               />
             </div>

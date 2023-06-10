@@ -62,7 +62,7 @@ const PostsActivity = () => {
           <div className={styles.containerBtnLoadPosts}>
             {buttonShow && loadedPosts.length < allPosts.length && (
               <CustomButton
-                className={"buttonLoadPosts"}
+                className={styles.buttonLoadPosts}
                 text="Laad meer"
                 handleClick={loadMorePosts}
               />
