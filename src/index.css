@@ -44,7 +44,8 @@ input[type="file"]::before {
   justify-content: center; 
   padding: 4px 12px;
   background-color: #7D7D7D;
-  color: white;
+  color: #FFFFFF;
+  font-family: "Inter";
   border-radius: 10px;
   border: none;
   text-align: center;

@@ -97,7 +97,7 @@ const FormPost = () => {
               <input
                 type="text"
                 id="title"
-                placeholder="Geen title"
+                placeholder="Geen titel"
                 className={styles.titleInput}
                 onChange={formValues}
                 name="title"
