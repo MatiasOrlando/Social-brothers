@@ -1,9 +1,22 @@
 .gridHome {
-  height: 675px;
+  min-height: 659px;
+  height: auto;
   width: auto;
   display: grid;
   grid-template-columns: repeat(12, 71px);
   gap: 24px;
   align-items: center;
   margin-top: 64px;
+  justify-items: center;
+}
+
+
+@media (max-width: 768px) {
+  .gridHome {
+    width: 642px;
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+    justify-items: center;
+    align-items: center;
+  }
 }

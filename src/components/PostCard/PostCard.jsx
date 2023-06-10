@@ -30,11 +30,15 @@ const PostCard = ({ postData }) => {
           : styles.postCardContainer
       } ${showPartialContent && styles.expanded}`}
     >
-      <figure className={styles.imageContainer}>
+      <figure
+        className={`${
+          pathname === "/blog"
+            ? styles.imageContainerBlog
+            : styles.imageContainer
+        }`}
+      >
         <img
-          className={
-            pathname === "/blog" ? styles.imagePostBlog : styles.imagePost
-          }
+          className={styles.imagePost}
           src={`${baseUrl}/storage/${img_url}`}
           alt={title}
         />
@@ -49,31 +53,28 @@ const PostCard = ({ postData }) => {
         style={{ display: "flex", justifyContent: "center", marginTop: "14px" }}
       >
         <div
-          className={
+          className={`${
             pathname === "/blog" ? styles.cardInfoBlog : styles.cardInfo
-          }
+          }`}
         >
           <h2
-            className={
+            className={`${
               pathname === "/blog" ? styles.cardTitleBlog : styles.cardTitle
-            }
+            }`}
           >
             {title}
           </h2>
           <div
-            className={
+            className={`${
               pathname === "/blog" ? styles.cardContentBlog : styles.cardContent
-            }
+            }`}
           >
             {showPartialContent ? (
               <>
                 {content}
                 <span
                   onClick={handleWatchMore}
-                  style={{
-                    cursor: "pointer",
-                    fontWeight: "600",
-                  }}
+                  style={{ cursor: "pointer", fontWeight: "600" }}
                 >
                   ...Minder weergeven
                 </span>
@@ -81,8 +82,8 @@ const PostCard = ({ postData }) => {
             ) : (
               <>
                 {pathname === "/blog"
-                  ? content.substr(0, 120)
-                  : content.substr(0, 130)}
+                  ? content.substr(0, 127)
+                  : content.substr(0, 150)}
                 {content.length > 200 && (
                   <span
                     onClick={handleWatchMore}

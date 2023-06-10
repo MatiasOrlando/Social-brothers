@@ -1,5 +1,5 @@
 .formPost {
-  height: 675px;
+  height: 659px;
   width: 451px;
   background-color: #FFFFFF; 
   display: flex;
@@ -19,12 +19,19 @@
   padding: 24px 0;
 }
 
+.titleFormContainer {
+  display: flex;
+  flex-direction: column;
+  height: 62px;
+  width: 403px;
+}
+
 .titleContainer  {
   display: flex;
   flex-direction: column;
   height: 62px;
   width: 403px;
-  padding: 15px 0;
+  padding-top: 24px;
 }
 
 .titlePost {
@@ -124,11 +131,11 @@
   flex-direction: column;
   height: 237px;
   width: 403px;
-  padding-top: 15px;
+  padding-top: 24px;
 }
 
 .textAreaInput { 
-  min-height: 200px;
+  min-height: 214px;
   height: auto;
   width: 403px;
   background-color: #FAFAFA;
@@ -144,7 +151,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 8px;
+  padding: 24px;
 }
 
 .buttonNewPost {
@@ -205,3 +212,33 @@
   color: gray;
 }
 
+@media (max-width: 1400px) {
+  .formPost {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleForm {
+    font-size: 20px;
+  }
+  .titlePost {
+    font-size: 10px;
+  }
+  .titleInput::placeholder {
+    font-size: 10px;
+  }
+  .categoryInput,
+  .categoryInputValid {
+    font-size: 10px;
+  }
+  .textAreaInput {
+    font-size: 10px;
+  }
+  .buttonTextPost {
+    font-size: 10px;
+  }
+  .textFileUpload {
+    font-size: 8px;
+  }
+}

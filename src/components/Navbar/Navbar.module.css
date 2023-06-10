@@ -80,39 +80,37 @@
 
 @media screen and (max-width: 1440px) {
   .stackedGroup {
-    left: 1000px;
+    left: 1200px;
   }
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1366px) and (min-width: 1281px) {
   .stackedGroup {
-    left: 900px;
+    left: 1100px;
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px) and (min-width: 1025px) {
   .stackedGroup {
-    left: 800px;
+    left: 850px;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (min-width: 769px) {
   .stackedGroup {
-    left: 650px;
+    left: 685px;
   }
 }
-
-
 
 @media screen and (max-width: 768px) {
   .logo {
-    width: 180px; 
-    left: 30px; 
-    top: 20px; 
+    width: 180px;
+    left: 30px;
+    top: 20px;
   }
   .stackedGroup {
-   top: 32px;
-   left: 340px; 
+    top: 32px;
+    left: 500px;
   }
   .blogNavbar {
     height: 40px;
@@ -124,3 +122,8 @@
   }
 }
 
+@media screen and (max-width: 550px) {
+  .stackedGroup {
+    left: 320px;
+  }
+}

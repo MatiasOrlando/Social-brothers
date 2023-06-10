@@ -50,7 +50,6 @@ const FormPost = () => {
     e.target.reset();
     setValidCategory("");
     setFileSelected(false);
-
     try {
       await axios.post(`${baseUrl}/api/posts`, formData, {
         headers: {
@@ -71,10 +70,16 @@ const FormPost = () => {
           background: "black",
           color: "white",
         },
-        className: "success-add-toast-test",
       });
       fetchAllPosts();
     } catch (error) {
+      toast.error("Nieuw bericht maken mislukt, probeer het later opnieuw", {
+        duration: "100",
+        style: {
+          background: "black",
+          color: "white",
+        },
+      });
       console.error(error);
     }
   };
@@ -85,7 +90,7 @@ const FormPost = () => {
         <div style={{ width: "403px" }}>
           <h2 className={styles.titleForm}>Plaats een blog bericht</h2>
           <form onSubmit={handleSubmit} id="postForm">
-            <div className={styles.titleContainer}>
+            <div className={styles.titleFormContainer}>
               <label htmlFor="title" className={styles.titlePost}>
                 Berichtnaam
               </label>
