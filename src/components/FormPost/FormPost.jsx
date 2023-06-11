@@ -45,6 +45,13 @@ const FormPost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.title.trim() || !formData.content.trim()) {
+      toast.error("Alle velden moeten worden ingevuld", {
+        duration: "100",
+        style: {
+          background: "black",
+          color: "white",
+        },
+      });
       return;
     }
     e.target.reset();
