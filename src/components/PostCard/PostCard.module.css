@@ -1,14 +1,12 @@
 .postCardContainer {
-  min-height: 217px;
-  height: auto;
+  height: 217px;
   width: 285px;
   background-color: #FFFFFF;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
 }
 
 .postCardContainerBlog {
-  min-height: 217px;
-  height: auto;
+  height: 217px;
   width: 261px;
   background-color: #FFFFFF;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
@@ -19,25 +17,16 @@
   position: relative;
   width: 285px; 
   height: 72px; 
-  
 }
 
 .imageContainerBlog {
   position: relative;
-   height: 72px;
+  height: 72px;
   width: 261px;
 }
 
 .imagePost {
   width: 100%;
-  height: 100%; 
-  object-fit: cover; 
-}
-
-
-
-.imagePostBlog {
-    width: 100%;
   height: 100%; 
   object-fit: cover; 
 }
@@ -107,23 +96,27 @@
 
 
 .cardTitleBlog {
-  height: auto;
   min-height: 29px;
-  width: 229px;
+  height: auto;
+  max-width: 253px;
   color: #262626;
   font-family: Inter;
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 0;
   line-height: 29px;
-  overflow: hidden;
   text-overflow: ellipsis;
-   display: -webkit-box;
+  word-wrap: break-word;
+  display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  word-wrap: break-word;
+  overflow: hidden;
 }
 
+.singleWordTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+}
 
 .cardContent {
   min-height: 76px;

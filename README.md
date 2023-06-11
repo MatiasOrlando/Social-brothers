@@ -38,6 +38,7 @@ This project was developed using the following technologies and frameworks:
 
 <ul>
 <li>React JS (Vite)</li>
+<li>CSS</li>
 <li>Material-UI</li>
 </ul>
 <br>

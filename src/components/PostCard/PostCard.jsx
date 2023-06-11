@@ -7,6 +7,8 @@ const PostCard = ({ postData }) => {
   const [showPartialContent, setShowPartialContent] = useState(false);
   const { pathname } = useLocation();
   const { title, content, img_url, category } = postData;
+  const isSingleWordTitle =
+    pathname === "/blog" && title.trim().split(" ").length === 1;
 
   const formatDate = (dateString) => {
     const dateObj = new Date(dateString);
@@ -22,13 +24,25 @@ const PostCard = ({ postData }) => {
     setShowPartialContent(!showPartialContent);
   };
 
+  const getContentLimit = () => {
+    if (pathname === "/blog") {
+      return content.includes(" ") ? 120 : 80;
+    } else if (content.includes(" ")) {
+      return 130;
+    } else {
+      return 95;
+    }
+  };
+
+  const partialContent = content.substr(0, getContentLimit());
+
   return (
     <article
       className={`${
         pathname === "/blog"
           ? styles.postCardContainerBlog
           : styles.postCardContainer
-      } ${showPartialContent && styles.expanded}`}
+      } ${showPartialContent ? styles.expanded : ""}`}
     >
       <figure
         className={`${
@@ -60,7 +74,7 @@ const PostCard = ({ postData }) => {
           <h2
             className={`${
               pathname === "/blog" ? styles.cardTitleBlog : styles.cardTitle
-            }`}
+            } ${isSingleWordTitle ? styles.singleWordTitle : ""}`}
           >
             {title}
           </h2>
@@ -81,10 +95,8 @@ const PostCard = ({ postData }) => {
               </>
             ) : (
               <>
-                {pathname === "/blog"
-                  ? content.substr(0, 127)
-                  : content.substr(0, 150)}
-                {content.length > 200 && (
+                {partialContent}
+                {content.length > getContentLimit() && (
                   <span
                     onClick={handleWatchMore}
                     style={{ cursor: "pointer", fontWeight: "600" }}
